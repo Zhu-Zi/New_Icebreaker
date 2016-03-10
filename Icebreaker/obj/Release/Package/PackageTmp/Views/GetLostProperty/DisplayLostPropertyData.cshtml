@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "DisplayPropertyData";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag</title>
+    <link href="@Url.Content("~/Content/StyleSheet/bootstrap.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/Content/StyleSheet/bootstrap-theme.min.css")" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="@Url.Content("~/Content/StyleSheet/mainStyleSheet.css")" rel="stylesheet" />
+    <script type="text/javascript" src="@Url.Content("~/Content/Javascript/jquery-1.11.3.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Javascript/bootstrap.js")"></script>
+    <script>
+
+
+
+
+
+    </script>
+</head>
+<body>
+    @foreach (var a in ViewData["LostPropertyData"] as List<Icebreaker.Models.LostProperty>)
+    {
+
+        <div>
+            <form action="~/GetLostProperty/ReceiverData" method="get">
+                <input type="text" value=@a.Name name="DisplayName" />
+                <input type="text" value=@a.Number name="DisplayNumber" />
+                <input type="text" value=@a.PublishDate />
+                @a.Describtion
+                <img style="width:300px;height:245px" src="@a.PhotoUrl" />
+                <br />
+
+                <div class="form-signin">
+                    <div class="bs-example">
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#@a.Number">认领</a>
+                                    </h4>
+                                </div>
+                                <div id=@a.Number class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <input type="text" placeholder="请输入学号" name="ReceiverStuNum" />
+                                        <br />
+                                        <input type="text" placeholder="请输入联系方式" name="ReceiverPhone" />
+                                        <button type="submit">确定</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    }
+</body>
+</html>

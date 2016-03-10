@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "PublishLostProperty";
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width" />
+    <script src="@Url.Content("~/Content/Javascript/jquery-1.11.3.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/Javascript/jquery.form.js")" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(function () {
+
+            $("#btn_show").bind("click", function () {
+                $("#form_upload").show();
+                var options = {
+                    success: function (responseText, statusText, xhr, $form) {
+                        var picPath = responseText.pic;
+                        if (picPath == "") {
+                            alert(responseText.error);
+                        }
+                        else {
+                            $("#form_upload").hide();
+                            $("#result").attr("src", picPath).show();
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        console.log(textStatus);
+                        console.log(errorThrown);
+                    }
+                };
+
+                $("#form_upload").ajaxForm(options);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div>
+        <form action="~/GetLostProperty/PublishLostPropertyData" method="post" enctype="multipart/form-data">
+            <label>学号</label>
+            <input type="text" name="PublisherStuNum" />
+            <label>密码</label>
+            <input type="password" name="Passward" />
+            <br />
+            <label>联系方式</label>
+            <input type="text" name="PublisherPhone" />
+            <label>电子邮件</label>
+            <input type="text" name="PublisherE_mail" />
+            <br />
+            <label>失物名称</label>
+            <input type="text" name="Name" />
+            <br />
+            <label>失物简介</label>
+            <input type="text" name="Describtion" />
+            <br />
+
+            <label>上传图片</label>
+            <input name="upImg" style="width:350px;height:25px;" size="38" type="file" />
+            <img alt="" style="width:300px;height:245px; display:none;" id="result" src="" />
+            <button type="submit" id="btn_show">提交</button>
+        </form>
+    </div>
+    @*<div>
+        <input type="button" id="btn_show" value="上传图片" /><br />
+        <form id="form_upload" style="padding:20px; display:none;" action="~/GetLostProperty/Upload" method="post" enctype="multipart/form-data">
+            <input name="upImg" style="width:350px;height:25px;" size="38" type="file" /><input type="submit" value="上传" />
+        </form>
+        <img alt="" style="width:300px;height:245px; display:none;" id="result" src="" />
+
+    </div>*@
+</body>
+</html>

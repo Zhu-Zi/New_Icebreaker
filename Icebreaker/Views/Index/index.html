@@ -1,0 +1,105 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <link href="stylesheets/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="stylesheets/mainStyleSheet.css" rel="stylesheet">
+
+
+    <script type="text/javascript" src="javascript/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="javascript/bootstrap.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <form class="form-signin">
+        <h2 class="form-signin-heading">萌萌哒地查成绩V2</h2>
+
+        <h4 class="form-signin-heading">Hosted By ECL@Xi'An With<span class="text-danger">❤</span> </h4>
+        <br>
+        <label for="inputEmail" class="sr-only">输入学号</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="输入学号" required autofocus>
+        <label for="inputPassword" class="sr-only">输入密码</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="输入密码" required>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> 将密码保存至数据库
+                <br><span style="font-weight: bold">说明:密码将以加密的方式存储到数据库中,请大家放心. <span class="text-danger">该功能暂时没有开放</span> </span>
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">点一下就可以查到成绩了(￣▽￣)</button>
+
+    </form>
+
+    <form class="form-signin">
+        <div class="bs-example">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">这个是之前那个萌萌哒查成绩吗</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>不是.之前的那个维护者已经上班了(跟着小姨子跑了),我们没有办法,于是我们自己重新写了一个.</p>
+                            <p>这个应该比隔壁的那个好用多了吧,听说隔壁的那个已经报502错误了,顺便吐槽一下flex</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">关于"保存密码"功能</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>该功能还未上线.</p>
+                            <p>等到上线的时候是否保存密码也是可以选择的.</p>
+                            <p>由于教务系统的服务器的可靠性不高,我们准备将已经查询过的用户名和密码缓存在自己的数据库中.当然,在找到<span class="text-danger">安全的密码保存方式</span>之前,我们是不会存储密码的.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">出问题之后的联系方式</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>发邮件到　513444173@qq.com　和　732382150@qq.com 或者直接加qq说明 <span class="text-danger">最好附上错误图片和你的学号+密码</span>仅用作调试 </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+
+</div> <!-- /container -->
+</body>
+</html>

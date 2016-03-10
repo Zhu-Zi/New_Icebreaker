@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IcebreakerStoreContainer" CdmEntityContainer="IcebreakerEntities1">
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="Icebreaker.Log">
+        <MappingFragment StoreEntitySet="Log">
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Server" ColumnName="Server" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="Icebreaker.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="SCORE" ColumnName="SCORE" />
+          <ScalarProperty Name="PWD" ColumnName="PWD" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="C_ID" ColumnName="_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LostProperties">
+      <EntityTypeMapping TypeName="Icebreaker.LostProperty">
+        <MappingFragment StoreEntitySet="LostProperty">
+          <ScalarProperty Name="Condition" ColumnName="Condition" />
+          <ScalarProperty Name="PublisherNum" ColumnName="PublisherNum" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="Describtion" ColumnName="Describtion" />
+          <ScalarProperty Name="PhotoUrl" ColumnName="PhotoUrl" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publishers">
+      <EntityTypeMapping TypeName="Icebreaker.Publisher">
+        <MappingFragment StoreEntitySet="Publisher">
+          <ScalarProperty Name="PublisherE_mail" ColumnName="PublisherE_mail" />
+          <ScalarProperty Name="PublisherPhone" ColumnName="PublisherPhone" />
+          <ScalarProperty Name="PublisherStuNum" ColumnName="PublisherStuNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PublishLogs">
+      <EntityTypeMapping TypeName="Icebreaker.PublishLog">
+        <MappingFragment StoreEntitySet="PublishLog">
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="PublishNum" ColumnName="PublishNum" />
+          <ScalarProperty Name="LostPropertyNum" ColumnName="LostPropertyNum" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReceiveLogs">
+      <EntityTypeMapping TypeName="Icebreaker.ReceiveLog">
+        <MappingFragment StoreEntitySet="ReceiveLog">
+          <ScalarProperty Name="Condition" ColumnName="Condition" />
+          <ScalarProperty Name="ReceiverDate" ColumnName="ReceiverDate" />
+          <ScalarProperty Name="ReceiverNum" ColumnName="ReceiverNum" />
+          <ScalarProperty Name="LostPropertyNum" ColumnName="LostPropertyNum" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Receivers">
+      <EntityTypeMapping TypeName="Icebreaker.Receiver">
+        <MappingFragment StoreEntitySet="Receiver">
+          <ScalarProperty Name="ReceiverPhone" ColumnName="ReceiverPhone" />
+          <ScalarProperty Name="ReceiverStuNum" ColumnName="ReceiverStuNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScoreViews">
+      <EntityTypeMapping TypeName="Icebreaker.ScoreView">
+        <MappingFragment StoreEntitySet="ScoreView">
+          <ScalarProperty Name="Singal" ColumnName="Singal" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

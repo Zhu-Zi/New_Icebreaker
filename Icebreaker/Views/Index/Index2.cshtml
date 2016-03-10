@@ -1,0 +1,854 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="icon" href="../../favicon.ico"/>
+
+    <title>成绩查询结果</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/Content/StyleSheet/bootstrap.min.css" rel="stylesheet"/>
+
+    <link href="/Content/StyleSheet/bootstrap-theme.min.css" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="/Content/StyleSheet/mainStyleSheet.css" rel="stylesheet"/>
+
+    
+        
+        <script type="text/javascript" src="/Content/Javascript/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="/Content/Javascript/bootstrap.js"></script>
+    <script>
+        var back = function () {
+            history.go(-1);
+        }
+    </script>  
+</head>
+<body>
+    <h1 class="text-center">萌萌哒地查成绩－结果</h1>
+<div class="container">
+
+
+    <button onclick="back()" class="btn btn-info">返回</button>
+    <table class="table" id="tbList">
+        <thead id=" tableHead" >
+            <tr>
+                <th nowrap>学年</th>
+                <th nowrap>课程名称</th>
+                <th nowrap>选修/必修</th>
+                <th nowrap>选修类别</th>
+                <th nowrap>学分</th>
+                <th nowrap>成绩</th>
+                <th nowrap>绩点</th>
+                <th nowrap>补考成绩</th>
+                <th nowrap >学期</th>
+                <th nowrap>开课学院名称</th>
+            </tr>
+        </thead>
+        <tbody>
+		<tr>
+                    <td>2013-2014</td>
+                    <td>股票投资理论与实务</td>
+                    <td>校公共选修课</td>
+                    <td>人文社会科学类</td>
+                    <td>2.0</td>
+                    <td>84</td>
+                    <td>3.9</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>教务处</td>
+                </tr>
+		<tr>
+                    <td>2013-2014</td>
+                    <td>大学生就业指导与创业教育</td>
+                    <td>校公共选修课</td>
+                    <td>职业生涯规划类</td>
+                    <td>2.0</td>
+                    <td>95</td>
+                    <td>5</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>教务处</td>
+                </tr>
+		<tr>
+                    <td>2014-2015</td>
+                    <td>陕西人文景观与旅游文化</td>
+                    <td>校公共选修课</td>
+                    <td></td>
+                    <td>2</td>
+                    <td>85</td>
+                    <td>4</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td>教务处</td>
+                </tr>
+		<tr>
+                    <td>2014-2015</td>
+                    <td>数码摄影及摄影作品欣赏</td>
+                    <td>校公共选修课</td>
+                    <td>艺术类</td>
+                    <td>2</td>
+                    <td>84</td>
+                    <td>3.9</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>教务处</td>
+                </tr>
+		<tr>
+                    <td>2013-2014</td>
+                    <td>思想道德修养与法律基础</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>3.0</td>
+                    <td>78</td>
+                    <td>3.3</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>政治学院</td>
+                </tr>
+		<tr>
+                    <td>2014-2015</td>
+                    <td>毛泽东思想和中国特色社会主义理论体系概论</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>4.0</td>
+                    <td>82</td>
+                    <td>3.7</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td>政治学院</td>
+                </tr>
+                <tr>
+                    <td>2013-2014</td>
+                    <td>程序语言课程设计</td>
+                    <td>实践课</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td>90</td>
+                    <td>4.5</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td>信息工程学院</td>
+                </tr>
+                <tr>
+                    <td>2013-2014</td>
+                    <td>大学英语Ⅰ</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>3.5</td>
+                    <td>60</td>
+                    <td>1.5</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td>外国语学院</td>
+                </tr>
+                <tr>
+                    <td>2013-2014</td>
+                    <td>高等数学AI</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>6.0</td>
+                    <td>62</td>
+                    <td>1.7</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td>信息工程学院</td>
+                </tr>
+                <tr>
+                    <td>2013-2014</td>
+                    <td>高级语言程序设计</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>3.5</td>
+                    <td>63</td>
+                    <td>1.8</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td>信息工程学院</td>
+                </tr>
+                <tr>
+                    <td>2013-2014</td>
+                    <td>计算机导论</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>2.5</td>
+                    <td>78</td>
+                    <td>3.3</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td>信息工程学院</td>
+                </tr>
+                <tr>
+                    <td>2013-2014</td>
+                    <td>体能</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td>77</td>
+                    <td>3.2</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2013-2014</td>
+                    <td>形势与政策Ⅰ</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td>92</td>
+                    <td>4.7</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td>政治学院</td>
+                </tr>
+                <tr>
+                    <td>2013-2014</td>
+                    <td>中国近代史纲要</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td>82</td>
+                    <td>3.7</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td>政治学院</td>
+                </tr>
+                
+                <tr>
+                    <td>2013-2014</td>
+                    <td>大学英语Ⅱ</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>3.5</td>
+                    <td>63</td>
+                    <td>1.8</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>外国语学院</td>
+                </tr>
+                <tr>
+                    <td>2013-2014</td>
+                    <td>高等数学AII</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>4.0</td>
+                    <td>69</td>
+                    <td>2.4</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>信息工程学院</td>
+                </tr>
+                
+                <tr>
+                    <td>2013-2014</td>
+                    <td>计算机组成原理</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>3.5</td>
+                    <td>68</td>
+                    <td>2.3</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>信息工程学院</td>
+                </tr>
+                <tr>
+                    <td>2013-2014</td>
+                    <td>可视化程序开发技术</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>2.5</td>
+                    <td>63</td>
+                    <td>1.8</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>信息工程学院</td>
+                </tr>
+                <tr>
+                    <td>2013-2014</td>
+                    <td>面向对象程序设计（C++）</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>3.5</td>
+                    <td>61</td>
+                    <td>1.6</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>信息工程学院</td>
+                </tr>
+                
+                <tr>
+                    <td>2013-2014</td>
+                    <td>体育舞蹈</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td>83</td>
+                    <td>3.8</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2013-2014</td>
+                    <td>形势与政策Ⅱ</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td>86</td>
+                    <td>4.1</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>政治学院</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>形势与政策Ⅲ
+		</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td>85</td>
+                    <td>4</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td>政治学院</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>Web程序开发基础</td>
+                    <td>选修课</td>
+                    <td></td>
+                    <td>3.5</td>
+                    <td>61</td>
+                    <td>1.6</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td>信息工程学院</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>大学英语Ⅲ</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>3.5</td>
+                    <td>60</td>
+                    <td>1.5</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td>外国语学院</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>概率论与数理统计B</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>3.0</td>
+                    <td>44</td>
+                    <td>3.28</td>
+
+                    <td>60</td>
+                    <td>1</td>
+                    <td>信息工程学院</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>汇编语言程序设计</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>2.5</td>
+                    <td>36</td>
+                    <td>0</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td>信息工程学院</td>
+                </tr>
+                
+                
+                <tr>
+                    <td>2014-2015</td>
+                    <td>数字逻辑与系统设计</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>2.5</td>
+                    <td>67</td>
+                    <td>2.2</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td>信息工程学院</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>太极拳</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td>88</td>
+                    <td>4.3</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>线性代数</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td>79</td>
+                    <td>3.4</td>
+
+                    <td></td>
+                    <td>1</td>
+                    <td>信息工程学院</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>形势与政策Ⅳ</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td>89</td>
+                    <td>4.4</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>政治学院</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>C#程序设计</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>3.5</td>
+                    <td>51</td>
+                    <td>0</td>
+
+                    <td>45</td>
+                    <td>2</td>
+                    <td>信息工程学院</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>Java程序设计</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>3.5</td>
+                    <td>67</td>
+                    <td>2.2</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>信息工程学院</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>大学英语Ⅳ</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>3.5</td>
+                    <td>44</td>
+                    <td>1.5</td>
+
+                    <td>60</td>
+                    <td>2</td>
+                    <td>外国语学院</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>离散数学</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>3.0</td>
+                    <td>67</td>
+                    <td>2.2</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>信息工程学院</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>马克思主义基本原理概论</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>3.0</td>
+                    <td>68</td>
+                    <td>2.3</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>政治学院</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>数据结构</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>3.5</td>
+                    <td>70</td>
+                    <td>2.5</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>信息工程学院</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>数据结构课程设计</td>
+                    <td>实践课</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td>80</td>
+                    <td>3.5</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>信息工程学院</td>
+                </tr>
+                
+                <tr>
+                    <td>2014-2015</td>
+                    <td>数值计算</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td>68</td>
+                    <td>2.3</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td>信息工程学院</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>羽毛球</td>
+                    <td>必修课</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td>86</td>
+                    <td>4.1</td>
+
+                    <td></td>
+                    <td>2</td>
+                    <td></td>
+                </tr>
+        </tbody>
+    </table>
+
+ </div>
+
+<div class="container">
+        <table class="table" id="tbList">
+            <thead id=" tableHead">
+                <tr>
+                    <th nowrap>课程性质名称</th>
+                    <th nowrap>学分要求</th>
+                    <th nowrap>获得学分</th>
+                    <th nowrap>未通过学分</th>
+                    <th nowrap>还需学分</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>必修课</td>
+                        <td>0</td>
+                        <td>87</td>
+                        <td>6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>任选课</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>选修课</td>
+                        <td>0</td>
+                        <td>3.50</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>实践课</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>限选课</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>校公共选修课</td>
+                        <td>0</td>
+                        <td>8</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>双学位辅修课程</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>合计</td>
+                        <td>0</td>
+                        <td>102.50</td>
+                        <td>6</td>
+                        <td>0</td>
+                    </tr>
+            </tbody>
+        </table>
+</div>
+
+
+
+    <div class="container">
+        <table class="table" id="tbList">
+            <thead id=" tableHead">
+                <tr>
+                    <th nowrap>课程归属名称</th>
+                    <th nowrap>学分要求</th>
+                    <th nowrap>获得学分</th>
+                    <th nowrap>未通过学分</th>
+                    <th nowrap>还需学分</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>人文社会科学类</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>自然科学类</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>艺术类</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>传统文化与西安地方文</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>综合技能类</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>职业生涯规划类</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>双学位辅修课程类</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>院系选修课</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>合计</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="container">
+        <table class="table" id="tbList">
+            <thead id=" tableHead">
+                <tr>
+                    <th nowrap>课程代码</th>
+                    <th nowrap>课程名称</th>
+                    <th nowrap>学分</th>
+                    <th nowrap>课程性质</th>
+                    <th nowrap>最高成绩值</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>121210103</td>
+                        <td>汇编语言程序设计</td>
+                        <td>2.5</td>
+                        <td>必修课</td>
+                        <td>36</td>
+                    </tr>
+                    <tr>
+                        <td>121210203</td>
+                        <td>C#程序设计</td>
+                        <td>3.5</td>
+                        <td>必修课</td>
+                        <td>51</td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="container">
+        <table class="table" id="tbList">
+            <thead id=" tableHead">
+                <tr>
+                    <th nowrap>选课课号</th>
+                    <th nowrap>课程名称</th>
+                    <th nowrap>教师姓名</th>
+                    <th nowrap>学分</th>
+                    <th nowrap>周学时</th>
+                    <th nowrap>上课地点</th>
+                    <th nowrap>上课时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>(2015-2016-1)-040110614-1019790502-1</td>
+                        <td>思想政治理论课社会实践</td>
+                        <td>杨静</td>
+                        <td>4.0</td>
+                        <td>+4</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>(2015-2016-1)-121210105-1019760281-1</td>
+                        <td>操作系统原理</td>
+                        <td>孙少波</td>
+                        <td>3.5</td>
+                        <td>3.0-1.0</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>(2015-2016-1)-121210106-1019810041-1</td>
+                        <td>数据库原理</td>
+                        <td>杨振华</td>
+                        <td>3.5</td>
+                        <td>3.0-1.0</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>(2015-2016-1)-121210304-1019760291-1</td>
+                        <td>Java Web开发技术</td>
+                        <td>车鹏飞</td>
+                        <td>2.5</td>
+                        <td>2.0-1.0</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>(2015-2016-1)-121210108-1019800632-1</td>
+                        <td>计算机专业外语</td>
+                        <td>杨全</td>
+                        <td>2.0</td>
+                        <td>2.0-0.0</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>(2015-2016-1)-121210109-T000000036-1</td>
+                        <td>软件工程（双语）</td>
+                        <td>原炜斌</td>
+                        <td>3.5</td>
+                        <td>3.0-1.0</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>(2015-2016-1)-121210211-T000000036-1</td>
+                        <td>统一建模语言（UML）</td>
+                        <td>原炜斌</td>
+                        <td>2.5</td>
+                        <td>2.0-1.0</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>(2015-2016-1)-121210107-1019740271-1</td>
+                        <td>计算机网络</td>
+                        <td>马宗保</td>
+                        <td>3.5</td>
+                        <td>3.0-1.0</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

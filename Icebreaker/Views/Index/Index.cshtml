@@ -1,0 +1,196 @@
+﻿@{
+    ViewBag.Title = "萌萌哒查询V2.1";
+    ViewBag.Founction = "萌萌哒查成绩V2.1";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    @*<meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="Cache-Control" content="no-store, must-revalidate">
+        <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+        <meta http-equiv="expires" content="0">*@
+
+    @*<meta http-equiv="Expires" content="0">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta http-equiv="Pragma" content="no-cache">*@
+    <!--客户端取消缓存-->
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap core CSS -->
+    <link href="@Url.Content("~/Content/StyleSheet/bootstrap.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/Content/StyleSheet/bootstrap-theme.min.css")" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="@Url.Content("~/Content/StyleSheet/mainStyleSheet.css")" rel="stylesheet" />
+
+    <script type="text/javascript" src="@Url.Content("~/Content/Javascript/jquery-1.11.3.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Javascript/bootstrap.js")"></script>
+    <script type="text/javascript" src="http://www.cnblogs.com/Scripts/jquery-1.3.2-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#valiCode").bind("click", function () {
+                this.src = "../Index/GetValidateCode?time=" + (new Date()).getTime();
+            });
+            //alert("good");
+        });
+    </script>
+
+
+    @*<script type="text/javascript"> //这种方法会使得页面不停的刷新
+            window.onload = function () {
+                //window.location.reload();
+                //或者
+                //window.location.href = window.location.href;
+            }
+        </script>*@
+
+</head>
+<body>
+
+    <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                    <a class="navbar-brand" href="#"> <span class="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline">M</span> </a> <a class="navbar-brand header-font2" href="#">@ViewBag.Title</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="../Index/Index">萌萌哒地查成绩 <span class="sr-only">(current)</span></a></li>
+                        <li><a href="../ChooseClass/Index">萌萌哒地查选课</a></li>
+                        @*<li><a href="../GetLostProperty/Index">萌萌哒地查失物</a></li>*@
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+
+        <form class="form-signin" action="/Index/GetData" method="post">
+            <h2 class="form-signin-heading">@ViewBag.Founction</h2>
+
+            <h4 class="form-signin-heading">Hosted By ECL@Xi'An With<span class="text-danger">❤</span> </h4>
+            <h5 class="form-signin-heading">特别鸣谢：社联，学生会</h5>
+            <br>
+
+            <label for="inputEmail" class="sr-only">输入学号</label>
+            <input type="text" id="inputEmail" class="form-control" placeholder="输入学号" required autofocus name="User" />
+            <label for="inputPassword" class="sr-only">输入密码</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="输入密码" required name="Pwd" />
+            <input type="text" id="inputValidateCode" class="form-control" placeholder="输入验证码" required name="Code" />
+            <img id="valiCode" style="cursor: pointer;" src="../Index/GetValidateCode" alt="验证码" />
+            <hr />
+            <p style="font-weight:bold;">鉴于学校网络不是很稳定，亲们查成绩的时候要多一点点耐心哦...</p>
+            <p style="font-weight:bold;">由于教务系统的问题，专科（五年制）的亲们查成绩可能会出现问题，建议换个服务器或者换个时间再查...</p>
+            <p style="font-weight:bold;">请选择服务器</p>
+
+            <label><input name="server" type="radio" checked="checked" value="172.17.1.41" />服务器1 </label>
+            <label><input name="server" type="radio" value="172.17.1.38:8080" />服务器2 </label>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me" name="Check" /> 将密码保存至数据库
+                    <br><span style="font-weight: bold">说明:密码将以加密的方式存储到数据库中,请大家放心. <span class="text-danger">该功能暂时没有开放</span> </span>
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">点一下就可以查到成绩了(￣▽￣)</button>
+
+        </form>
+
+        <div class="form-signin">
+            <div class="bs-example">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">这个是之前那个萌萌哒查成绩吗</a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>向前一个版本的制作人员陈天运，侯晨琛致敬</p>
+                                <p>在陈天运的大牛的指导下，赵永波、戚亚柱、王钥珈完成了现版本的开发</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">关于"保存密码"功能</a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>该功能还未上线.</p>
+                                <p>等到上线的时候是否保存密码也是可以选择的.</p>
+                                <p>由于教务系统的服务器的可靠性不高,我们准备将已经查询过的用户名和密码缓存在自己的数据库中.当然,在找到<span class="text-danger">安全的密码保存方式</span>之前,我们是<span class="text-danger">不会</span>存储密码的.</p>
+                                <p>我们也<span class="text-danger">不会</span>用拿到的密码做一些不好的事情，（！！！严肃脸！！！），请大家放心</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">出问题之后的联系方式</a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>发邮件到　513444173@qq.com　和　732382150@qq.com 或者直接加qq说明 <span class="text-danger">最好附上错误图片和你的学号+密码</span>仅用作调试 </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">关于密码正确但仍不能查成绩的说明</a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>经过技术人员长时间的不懈努力，问题已解决。</p>
+                                <p>大家可以更加顺利的查成绩啦~</p>
+                                <p><span class="text-danger">（！！！开心脸！！！）</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">转载授权说明</a>
+                            </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>如需转载本网站请将转载申请发送至邮箱513444173@qq.com</p>                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <footer class="footer-beta2">
+            <div class="copy-footer">
+                <p>未经允许不得擅自转载</p>
+                <p>Copyright &copy 2014-2015 xuscore.tk</p>
+                <p>All Rights Reserved</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

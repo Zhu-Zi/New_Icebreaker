@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IcebreakerModelStoreContainer" CdmEntityContainer="IcebreakerEntities">
+    <EntitySetMapping Name="Student">
+      <EntityTypeMapping TypeName="IcebreakerModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="C_ID" ColumnName="_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PED" ColumnName="PED" />
+          <ScalarProperty Name="SCORE" ColumnName="SCORE" />
+          <ScalarProperty Name="SAVEPWD" ColumnName="SAVEPWD" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

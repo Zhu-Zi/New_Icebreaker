@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Icebreaker.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Time" Type="datetime" />
+    <Property Name="Type" Type="nchar" MaxLength="10" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pwd" Type="nvarchar(max)" />
+    <Property Name="Server" Type="nchar" MaxLength="50" />
+    <Property Name="Message" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="LostProperty">
+    <Key>
+      <PropertyRef Name="Number" />
+    </Key>
+    <Property Name="Number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="PhotoUrl" Type="nvarchar(max)" />
+    <Property Name="Describtion" Type="nvarchar(max)" />
+    <Property Name="PublishDate" Type="datetime" />
+    <Property Name="PublisherNum" Type="nchar" MaxLength="10" />
+    <Property Name="Condition" Type="int" />
+  </EntityType>
+  <EntityType Name="Publisher">
+    <Key>
+      <PropertyRef Name="PublisherStuNum" />
+    </Key>
+    <Property Name="PublisherStuNum" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="PublisherPhone" Type="nchar" MaxLength="20" />
+    <Property Name="PublisherE_mail" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PublishLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LostPropertyNum" Type="int" />
+    <Property Name="PublishNum" Type="nchar" MaxLength="10" />
+    <Property Name="PublishDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ReceiveLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LostPropertyNum" Type="int" />
+    <Property Name="ReceiverNum" Type="nchar" MaxLength="10" />
+    <Property Name="ReceiverDate" Type="datetime" />
+    <Property Name="Condition" Type="int" />
+  </EntityType>
+  <EntityType Name="Receiver">
+    <Key>
+      <PropertyRef Name="ReceiverStuNum" />
+    </Key>
+    <Property Name="ReceiverStuNum" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ReceiverPhone" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ScoreView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Time" Type="datetime" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="Singal" Type="bigint" />
+    <Property Name="Text" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="_ID" />
+    </Key>
+    <Property Name="_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="nvarchar(max)" />
+    <Property Name="PWD" Type="nvarchar(max)" />
+    <Property Name="SCORE" Type="nvarchar(max)" />
+    <Property Name="LASTMODIFIED" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="IcebreakerStoreContainer">
+    <EntitySet Name="Log" EntityType="Self.Log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LostProperty" EntityType="Self.LostProperty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Publisher" EntityType="Self.Publisher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PublishLog" EntityType="Self.PublishLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReceiveLog" EntityType="Self.ReceiveLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Receiver" EntityType="Self.Receiver" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ScoreView" EntityType="Self.ScoreView" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

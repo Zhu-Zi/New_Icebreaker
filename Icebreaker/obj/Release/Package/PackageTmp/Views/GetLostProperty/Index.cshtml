@@ -1,0 +1,121 @@
+﻿@{
+    ViewBag.Title = "萌萌哒地查询V3";
+    ViewBag.Founction = "萌萌哒查失物V3";
+    Layout = null;
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+
+    <link href="@Url.Content("~/Content/StyleSheet/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/StyleSheet/bootstrap-theme.min.css")" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="@Url.Content("~/Content/StyleSheet/mainStyleSheet.css")" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="@Url.Content("~/Content/Javascript/jquery-1.11.3.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Javascript/bootstrap.js")"></script>
+    
+    
+</head>
+<body>
+    <style>
+        .lost {
+            background-color: #06C;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            border-radius: 50px 50px;
+            font-size: 40px;
+            color: #FFF;
+        }
+
+        .losticon {
+            margin-top: 27px;
+        }
+
+        .col-sm-6 {
+            margin: 30px 0px;
+        }
+
+        .container2 {
+            margin-top: 50px;
+        }
+    </style>
+    
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                    <a class="navbar-brand" href="#"> <span class="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline">M</span> </a> <a class="navbar-brand header-font2" href="#">@ViewBag.Title</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="../Index/Index">萌萌哒地查成绩<span class="sr-only">(current)</span></a></li>
+                        <li><a href="../ChooseClass/Index">萌萌哒地查选课</a></li>
+                        <li class="../GetLostProperty/Index"><a href="#">萌萌哒地查失物<span class="sr-only">(current)</span></a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+    <div class="form-signin">
+        <h2 class="form-signin-heading">@ViewBag.Founction</h2>
+
+        <h4 class="form-signin-heading">Hosted By ECL@Xi'An With<span class="text-danger">❤</span> </h4>
+        <h5 class="form-signin-heading">特别鸣谢：社联，学生会</h5>
+
+
+
+    </div>
+    <div class="container2">
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="#"></a>
+                <div class="col-xs-12 ">
+                    <a href="#"> </a>
+                    <div class="text-center">
+                        <a href="~/GetLostPrOperty/PublishLostProperty">
+                        @*<a href="~/GetLostPrOperty/DisplayLostPropertyData">*@
+                            <div class="lost"><div class="losticon"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></div></div>
+                            <h3>Lost</h3>
+                        </a>
+                    </div>
+                </div>
+                <a href="#"></a>
+                <div class="col-xs-12 ">
+                    <a href="#"> </a>
+                    <div class="text-center">
+                        <a href="~/GetLostPrOperty/DisplayLostPropertyData">
+                            @*<a href="~/GetLostPrOperty/GetLostProperty">*@
+                            <div class="lost"><div class="losticon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div></div>
+                            <h3>Found</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <footer class="footer-beta2">
+            <div class="copy-footer">
+                <p>Copyright ? 2014-2015 xuscore.tk</p>
+                <p>All Rights Reserved</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Icebreaker.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Time" Type="datetime" />
+          <Property Name="Type" Type="nchar" MaxLength="10" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pwd" Type="nvarchar(max)" />
+          <Property Name="Server" Type="nchar" MaxLength="50" />
+          <Property Name="Message" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LostProperty">
+          <Key>
+            <PropertyRef Name="Number" />
+          </Key>
+          <Property Name="Number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="PhotoUrl" Type="nvarchar(max)" />
+          <Property Name="Describtion" Type="nvarchar(max)" />
+          <Property Name="PublishDate" Type="datetime" />
+          <Property Name="PublisherNum" Type="nchar" MaxLength="10" />
+          <Property Name="Condition" Type="int" />
+        </EntityType>
+        <EntityType Name="Publisher">
+          <Key>
+            <PropertyRef Name="PublisherStuNum" />
+          </Key>
+          <Property Name="PublisherStuNum" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="PublisherPhone" Type="nchar" MaxLength="20" />
+          <Property Name="PublisherE_mail" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PublishLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LostPropertyNum" Type="int" />
+          <Property Name="PublishNum" Type="nchar" MaxLength="10" />
+          <Property Name="PublishDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ReceiveLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LostPropertyNum" Type="int" />
+          <Property Name="ReceiverNum" Type="nchar" MaxLength="10" />
+          <Property Name="ReceiverDate" Type="datetime" />
+          <Property Name="Condition" Type="int" />
+        </EntityType>
+        <EntityType Name="Receiver">
+          <Key>
+            <PropertyRef Name="ReceiverStuNum" />
+          </Key>
+          <Property Name="ReceiverStuNum" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="ReceiverPhone" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ScoreView">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Time" Type="datetime" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="Singal" Type="bigint" />
+          <Property Name="Text" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="_ID" />
+          </Key>
+          <Property Name="_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="nvarchar(max)" />
+          <Property Name="PWD" Type="nvarchar(max)" />
+          <Property Name="SCORE" Type="nvarchar(max)" />
+          <Property Name="LASTMODIFIED" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="IcebreakerStoreContainer">
+          <EntitySet Name="Log" EntityType="Self.Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LostProperty" EntityType="Self.LostProperty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Publisher" EntityType="Self.Publisher" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PublishLog" EntityType="Self.PublishLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReceiveLog" EntityType="Self.ReceiveLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Receiver" EntityType="Self.Receiver" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ScoreView" EntityType="Self.ScoreView" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Icebreaker" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="IcebreakerEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Logs" EntityType="Icebreaker.Log" />
+          <EntitySet Name="Students" EntityType="Icebreaker.Student" />
+          <EntitySet Name="LostProperties" EntityType="Icebreaker.LostProperty" />
+          <EntitySet Name="Publishers" EntityType="Icebreaker.Publisher" />
+          <EntitySet Name="PublishLogs" EntityType="Icebreaker.PublishLog" />
+          <EntitySet Name="ReceiveLogs" EntityType="Icebreaker.ReceiveLog" />
+          <EntitySet Name="Receivers" EntityType="Icebreaker.Receiver" />
+          <EntitySet Name="ScoreViews" EntityType="Icebreaker.ScoreView" />
+        </EntityContainer>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Time" Type="DateTime" Precision="3" />
+          <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="User" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Server" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="C_ID" />
+          </Key>
+          <Property Name="C_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PWD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SCORE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="LostProperty">
+          <Key>
+            <PropertyRef Name="Number" />
+          </Key>
+          <Property Name="Number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PhotoUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Describtion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PublishDate" Type="DateTime" Precision="3" />
+          <Property Name="PublisherNum" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Condition" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Publisher">
+          <Key>
+            <PropertyRef Name="PublisherStuNum" />
+          </Key>
+          <Property Name="PublisherStuNum" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PublisherPhone" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="PublisherE_mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PublishLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LostPropertyNum" Type="Int32" />
+          <Property Name="PublishNum" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PublishDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ReceiveLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LostPropertyNum" Type="Int32" />
+          <Property Name="ReceiverNum" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ReceiverDate" Type="DateTime" Precision="3" />
+          <Property Name="Condition" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Receiver">
+          <Key>
+            <PropertyRef Name="ReceiverStuNum" />
+          </Key>
+          <Property Name="ReceiverStuNum" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ReceiverPhone" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ScoreView">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Time" Type="DateTime" Precision="3" />
+          <Property Name="User" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Singal" Type="Int64" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IcebreakerStoreContainer" CdmEntityContainer="IcebreakerEntities1">
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="Icebreaker.Log">
+              <MappingFragment StoreEntitySet="Log">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Server" ColumnName="Server" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="Icebreaker.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="SCORE" ColumnName="SCORE" />
+                <ScalarProperty Name="PWD" ColumnName="PWD" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="C_ID" ColumnName="_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LostProperties">
+            <EntityTypeMapping TypeName="Icebreaker.LostProperty">
+              <MappingFragment StoreEntitySet="LostProperty">
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+                <ScalarProperty Name="PublisherNum" ColumnName="PublisherNum" />
+                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+                <ScalarProperty Name="Describtion" ColumnName="Describtion" />
+                <ScalarProperty Name="PhotoUrl" ColumnName="PhotoUrl" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Publishers">
+            <EntityTypeMapping TypeName="Icebreaker.Publisher">
+              <MappingFragment StoreEntitySet="Publisher">
+                <ScalarProperty Name="PublisherE_mail" ColumnName="PublisherE_mail" />
+                <ScalarProperty Name="PublisherPhone" ColumnName="PublisherPhone" />
+                <ScalarProperty Name="PublisherStuNum" ColumnName="PublisherStuNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PublishLogs">
+            <EntityTypeMapping TypeName="Icebreaker.PublishLog">
+              <MappingFragment StoreEntitySet="PublishLog">
+                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+                <ScalarProperty Name="PublishNum" ColumnName="PublishNum" />
+                <ScalarProperty Name="LostPropertyNum" ColumnName="LostPropertyNum" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReceiveLogs">
+            <EntityTypeMapping TypeName="Icebreaker.ReceiveLog">
+              <MappingFragment StoreEntitySet="ReceiveLog">
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+                <ScalarProperty Name="ReceiverDate" ColumnName="ReceiverDate" />
+                <ScalarProperty Name="ReceiverNum" ColumnName="ReceiverNum" />
+                <ScalarProperty Name="LostPropertyNum" ColumnName="LostPropertyNum" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Receivers">
+            <EntityTypeMapping TypeName="Icebreaker.Receiver">
+              <MappingFragment StoreEntitySet="Receiver">
+                <ScalarProperty Name="ReceiverPhone" ColumnName="ReceiverPhone" />
+                <ScalarProperty Name="ReceiverStuNum" ColumnName="ReceiverStuNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScoreViews">
+            <EntityTypeMapping TypeName="Icebreaker.ScoreView">
+              <MappingFragment StoreEntitySet="ScoreView">
+                <ScalarProperty Name="Singal" ColumnName="Singal" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

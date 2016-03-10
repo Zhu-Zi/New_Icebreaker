@@ -1,0 +1,225 @@
+﻿@{
+    Layout = null;
+}
+
+@*<!DOCTYPE html>*@
+
+@*<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        根据成绩生成相应的视图
+    </div>
+</body>
+</html>*@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>萌萌哒查成绩</title>
+
+    <link href="@Url.Content("~/Content/StyleSheet/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/StyleSheet/bootstrap-theme.min.css")" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="@Url.Content("~/Content/StyleSheet/mainStyleSheet.css")" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="@Url.Content("~/Content/Javascript/jquery-1.11.3.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Javascript/bootstrap.js")"></script>
+
+
+</head>
+<style>
+
+    .mm {
+        max-width: 330px;
+        margin: 0 auto;
+    }
+
+    #main {
+        height: 300px;
+        width: 100%;
+        margin: -35px auto 0;
+    }
+
+    .main1 {
+        height: 100px;
+        margin: 0 auto;
+    }
+
+    .maintitle1 {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .maintitle2 {
+        text-align: center;
+        font-size: 13px;
+        color: #999;
+    }
+
+    .avescorep {
+        text-align: center;
+        line-height: 100%;
+        margin: 110px auto;
+        font-size:18px;
+    }
+</style>
+
+<body>
+    
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                    <a class="navbar-brand" href="#"> <span class="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline">M</span> </a> <a class="navbar-brand header-font2" href="#">萌萌哒查询V2</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="../Index/Index">萌萌哒地查成绩<span class="sr-only">(current)</span></a></li>
+                        <li><a href="../ChooseClass/Index">萌萌哒地查选课</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div class="row mm">
+            <div class="col-xs-12">
+                <div class="avescorep">
+                    @*<p>2014年最意气风发</p>
+                    <p>2014年最情绪低迷</p>*@
+                    <br />
+                    <p>有高峰，</p>
+                    <p>@ViewBag.TopScore </p>
+                    <br />
+                    <p>有低谷，</p>
+                    <p>@ViewBag.BottmScore</p>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="main1">
+                    <div class="maintitle1">
+                        <strong><p>宝宝大学以来各学期的平均成绩</p></strong>
+                    </div>
+                    <div class="maintitle2">
+                        <p>除校公选课外</p>
+                    </div>
+                </div>
+                <div id="main"></div>
+                <!-- ECharts单文件引入 -->
+                <script src="@Url.Content("~/Content/Javascript/dist/echarts.js")"></script>
+                <script type="text/javascript">
+                    // 路径配置
+                    require.config({
+                        paths: {
+                            echarts: '@Url.Content("~/Content/Javascript/dist")'
+                        }
+                    });
+
+                    // 使用
+                    require(
+                        [
+                            'echarts',
+                            'echarts/chart/bar',
+                            'echarts/chart/line'  // 使用柱状图就加载bar模块，按需加载
+                        ],
+                        function (ec) {
+                            // 基于准备好的dom，初始化echarts图表
+                            var myChart = ec.init(document.getElementById('main'));
+
+                            var option = {
+                                tooltip: {
+                                    trigger: 'axis',
+                                },
+                                legend: {
+                                    data: ['各学期平均成绩'],
+                                },
+                                toolbox: {
+                                    show: true,
+                                    y: 30,
+                                    x: 185,
+                                    feature: {
+                                        magicType: { show: true, type: ['line', 'bar'] },
+                                        
+                                    }
+                                },
+                                calculable: true,
+                                xAxis: [
+                                    {
+                                        type: 'category',
+                                        boundaryGap: false,
+                                        data: ['1', '2', '3', '4', '5', '6', '7']
+                                    }
+                                ],
+                                yAxis: [
+                                    {
+                                        type: 'value',
+                                        axisLabel: {
+                                            formatter: '{value} 分'
+                                        }
+                                    }
+                                ],
+                                series: [
+                                    {
+                                        name: '各学期平均成绩',
+                                        type: 'line',
+                                        data: [@ViewBag.AverageScore],
+                                        markPoint: {
+                                            data: [
+                                                { type: 'max', name: '最大值' },
+                                                { type: 'min', name: '最小值' }
+                                            ]
+                                        },
+                                        markLine: {
+                                            data: [
+                                                { type: 'average', name: '所有课平均成绩' }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            };
+
+                            // 为echarts对象加载数据
+                            myChart.setOption(option);
+                        }
+                    );
+                </script>
+            </div>
+            <div class="col-xs-12">
+                <div class="avescorep">
+                    @*<p>越过0分的沟壑，</p>
+                    <p>0次考试没有成绩</p>
+                    <br />*@
+                    <p>有过高GPA的荣耀，</p>
+                    <p>@ViewBag.GPA 次GPA为4.7</p>
+                    <br/>
+                    <p>@ViewBag.NotPassClassCount 次差点及格，</p>
+                    <p>@ViewBag.PassClassOfBottmScoreCount 次漂浮在60分以上</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="container">
+        <footer class="footer-beta2">
+            <div class="copy-footer">
+                <p>Copyright © 2014-2015 xuscore.tk</p>
+                <p>All Rights Reserved</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
